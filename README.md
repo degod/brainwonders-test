@@ -15,15 +15,17 @@ This project is a simple School Partners management system built with CodeIgnite
 
 ### Prerequisites
 
-Docker and Docker Compose installed.
+- Docker and Docker Compose installed.
+- Docker up and running
+- Shell terminal
 
 ### Setup Instructions
 
 1. Clone the project:
 
    ```bash
-   git clone https://github.com/yourusername/school-partners.git
-   cd school-partners
+   git clone https://github.com/degod/brainwonders-test.git
+   cd brainwonders-test
    ```
 
 2. Start the containers:
@@ -67,9 +69,9 @@ Docker and Docker Compose installed.
 
 ## Testing
 
-Visit the app at http://localhost:9090 and navigate to `/SchoolPartners` to view, create, or edit partners.
+Visit the app at http://localhost:9090 or navigate to `/partners` to view, create, or edit partners.
 
-## Common Issues
+## Common Issues (Ignore this - Everything works)
 
 - If URLs redirect to container IPs, make sure `base_url` is correctly set to `http://localhost:9090/`
 - `mysqli_init()` errors usually mean missing extensions. Make sure your Dockerfile for PHP includes:
@@ -77,7 +79,7 @@ Visit the app at http://localhost:9090 and navigate to `/SchoolPartners` to view
   RUN docker-php-ext-install mysqli pdo pdo_mysql
   ```
 
-## Directory Structure
+## Directory Structure (HMVC Pattern)
 
 ```
 /docker
@@ -86,9 +88,12 @@ Visit the app at http://localhost:9090 and navigate to `/SchoolPartners` to view
   /php
     Dockerfile
 /application
-  /controllers/SchoolPartners.php
-  /views/list.php
-  /views/form.php
+  /modules
+    /SchoolPartners
+      /controllers/SchoolPartners.php
+      /models/SchoolPartnerRepository.php
+      /views/list.php
+      /views/form.php
 ```
 
 ## Docker Services
@@ -102,4 +107,21 @@ Visit the app at http://localhost:9090 and navigate to `/SchoolPartners` to view
 
 ## Author
 
-Created by You. Contributions welcome!
+Created by DeGod. Contributions welcome!
+
+## Contributing
+
+If you encounter bugs or wish to contribute, please follow these steps:
+
+- Fork the repository and clone it locally.
+- Create a new branch (`git checkout -b feature/fix-issue`).
+- Make your changes and commit them (`git commit -am 'Fix issue'`).
+- Push to the branch (`git push origin feature/fix-issue`).
+- Create a new Pull Request against the `main` branch, tagging `@degod`.
+
+## Contact
+
+For inquiries or assistance, you can reach out to Godwin Uche:
+
+- `Email:` degodtest@gmail.com
+- `Phone:` +2348024245093
